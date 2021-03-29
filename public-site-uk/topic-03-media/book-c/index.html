@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1,npm/jquery-address@1.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+      
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+
+    </style>
+  </head>
+
+  
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  Personal projects  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Monocle">
+          Monocle
+        </a>
+      
+    </div>
+  </div>
+
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          
+            <a class="item"
+               href="/topic-02-varied/book-a/index.html">Career </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-a/index.html">Front Line Zero </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-b/index.html">Experiments </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-c/index.html">Monocle </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-1/book-a/index.html">Music and theatre </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-2/book-a/index.html">Short stories </a>
+          
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Monocle">
+            <h1>Monocle</h1>
+<p>My personal 3D game engine using multiple rendering APIs.</p>
+<h2>Introduction</h2>
+<p>Monocle is my learning project when I want to experiment with new rendering algorithms or new APIs I don&#39;t know yet.</p>
+<p>It is meant to be a modular and flexible framework for 3D applications, using a number of DLLs representing each of the engine&#39;s &quot;modules&quot; (Audio, Physics, Rendering, Window...).</p>
+<p>It is built using CMake.</p>
+<p>The project is open source and <a href="https://github.com/Scylardor/Monocle2">available on Github</a>, although the code there isn&#39;t always up-to-date (or on secondary branches).</p>
+<p>It went through multiple iterations and is in a constant &quot;work in progress&quot; state.</p>
+<p>Thus, it is by no means usable to develop a real game at the moment...</p>
+<p>But here is a list of the important modules it has, and their main features :</p>
+<h2>Core</h2>
+<p>This module is meant to be a central module for all others to include and use features of.</p>
+<p>Among other things, it features :</p>
+<ul>
+<li>an extensive, easy to use policy-based logging chain</li>
+<li>Debugger and preprocessor utilities like a custom Assert macro, manual DebugBreak instruction, Builder pattern helper macro...</li>
+<li>an implementation of the <a href="http://blog.coldflake.com/posts/C++-delegates-on-steroids/">impossibly fast delegates</a></li>
+<li>a &quot;printf-like&quot; string formatter, but that can work with std::string&#39;s out of the box for convenience ( inspired by <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2015/march/windows-with-c-using-printf-with-modern-c">Kenny Kerr</a> )</li>
+<li>a HashString implementation, enabling compile-time string hashing for better performance at runtime (when using them as hashmap keys for example)</li>
+</ul>
+<h2>Game Framework</h2>
+<p>A module meant to provide more game-centric data structures. Among others :</p>
+<ul>
+<li>A Factory-based Resource Manager making it easy to collect and reuse data resources as they are read and processed by plug-n-play factories that you connect to the manager.</li>
+<li>A generic FSM system that lets you program a custom finite state machine for your game.</li>
+</ul>
+<h2>Graphics</h2>
+<p>At its core, Monocle was always intended to be kind of a toy renderer sandbox, although a game engine is always much more than just that.</p>
+<p>The graphics features I successfully implemented with Monocle :</p>
+<ul>
+<li>Skyboxes</li>
+<li>Mesh Instancing</li>
+<li>Gamma correction and tone mapping operators (including use of the sRGB color space)</li>
+<li>Shadow mapping (with PCF)</li>
+<li>Normal mapping</li>
+<li>Parallax mapping</li>
+<li>Blending (transparency)</li>
+<li>SSAO</li>
+<li>Bloom (glow effect)</li>
+<li>a basic PBR metalness/roughness-based material system (using a BRDF, and IBL with HDR maps) </li>
+<li>a basic deferred renderer (as opposed to classic forward rendering)</li>
+</ul>
+<p>Unfortunately it does not work on all backends and most of it has been done in OpenGL so far.</p>
+<p>Slowly but surely adapting it to all backends ! (One day...)</p>
+<p>So far, I programmed in Monocle abstractions of the following rendering backends :</p>
+<ul>
+<li><p>OpenGL 4 (with the newer DSA calls)</p>
+</li>
+<li><p>DirectX 11 (in progress)</p>
+</li>
+<li><p>Vulkan (in progress)</p>
+</li>
+</ul>
+<p>But so far, the code never has been really cleaned up and is very messy. It works, but needs constant refactoring.</p>
+<p>Hopefully I can stabilize it one day to a common RHI (Render Hardware Interface) that I like.</p>
+<p><img src="img/shadowmapping.PNG" alt="Shadow Mapping"></p>
+<p><img src="img/bloom.png" alt="Bloom (Glow)"></p>
+<p><img src="img/main.png" alt="PBR material testbed"></p>
+<h2>Unit tests</h2>
+<p>Apart from the features of the engine, I try as much as I can to include unit tests for all easily testables features of the engine.</p>
+<p>To do so, I use Catch2 as a testing framework.</p>
+<p>A dedicated program built alongside the engine makes the user able to run the tests and easily add new ones if necessary.</p>
+<h2>TODO list</h2>
+<p>What I would like to tackle someday :</p>
+<ul>
+<li>GUI and Editor app integration (with ImGui)</li>
+</ul>
+<ul>
+<li>Physics integration (with either Bullet or PhysX)</li>
+</ul>
+<ul>
+<li>Audio integration (with fmod)</li>
+</ul>
+<ul>
+<li>Scripting (with the Lua scripting language)</li>
+</ul>
+<ul>
+<li>The graphics side is obviously very wide, among the main ideas that I would like to try :</li>
+</ul>
+<ul>
+<li>Planar reflections </li>
+<li>Raytracing with the new Vulkan extensions</li>
+<li>Compute shader-based cloth simulation</li>
+<li>Compute shader-based particle systems</li>
+<li>FXAA and other, fancier anti-aliasing algorithms</li>
+<li>A fancier implementation of SSAO, like <a href="https://github.com/nvpro-samples/gl_ssao">this implementation of HBAO by Nvidia</a></li>
+<li>Signed distance field-based geometries and font rendering</li>
+<li>Frustum culling and occlusion culling</li>
+<li>Order-independent transparency</li>
+<li>Spherical environment mapping</li>
+<li>Terrain tessellation</li>
+<li>Ocean water simulation</li>
+<li>Volumetric fog and lighting</li>
+</ul>
+<p>The list is endless... Got work for at least the next decade !</p>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <script>
+    $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+    $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+  </script>
+
+
+
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right small menu">
+      <div class="ui tiny basic message segment">
+         Powered by <a href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a> 
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>

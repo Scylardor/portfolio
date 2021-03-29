@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1,npm/jquery-address@1.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+      
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+
+    </style>
+  </head>
+
+  
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  Professional career  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Career">
+          Career
+        </a>
+      
+    </div>
+  </div>
+
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          
+            <a class="item"
+               href="/topic-02-varied/book-a/index.html">Career </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-a/index.html">Front Line Zero </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-b/index.html">Experiments </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-c/index.html">Monocle </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-1/book-a/index.html">Music and theatre </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-2/book-a/index.html">Short stories </a>
+          
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Career">
+            <h1>Overview</h1>
+<p>An overview of what I&#39;ve been working on so far.</p>
+<p>Of course these are not the only jobs I worked, but those I consider to be the most relevant to my current career path (or the list would go on and on !).</p>
+<h2>Video Game Programming Teacher (Second year) - ISART Digital, Montréal, Québec, Canada (2020 - )</h2>
+<p>After my first year at ISART, I then took on the role of Programming Teacher for the second year class, which makes me the Principal Game Programming Teacher at ISART Digital Montreal.</p>
+<p>This class involves more advanced material and topics than the programming first year&#39;s one. The main teachings include, but are not limited to :</p>
+<ul>
+<li>Advanced C++ (Multithreading, atomics, network sockets)</li>
+</ul>
+<ul>
+<li><p>Unreal Engine 4 : two collaboration projects with game design and game art students to discover the Unreal Engine 4 capabilities.</p>
+<ul>
+<li><p>Base Defense : A game design prototype of a 3D tower defense. Introduction to Behavior Trees, Blueprints, UE4 C++, UMG...</p>
+</li>
+<li><p>Circuit : A fully-featured level of a Mario Kart-like game using a custom vehicle (coded from scratch). Introduction to Onlinesubsystem, Sublevels, Spline-based movement and tools.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Build management with CMake</li>
+</ul>
+<ul>
+<li>Versioning using the Perforce VCS</li>
+</ul>
+<ul>
+<li>Advanced rendering algorithms: shadow mapping, IBL, PBR.</li>
+</ul>
+<ul>
+<li><p>Game Engine design and programming : design patterns and optimization concerns to develop a fully-featured game engine.</p>
+<ul>
+<li><p>implementing a Vulkan rendering backend</p>
+</li>
+<li><p>implementing a PhysX physics backend</p>
+</li>
+<li><p>implementing a fmod audio backend</p>
+</li>
+<li><p>Custom Skeletal Animation subsystem</p>
+</li>
+<li><p>Scene Graph, Resource Manager, Lua scripting, etc.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The end-of-year project for this year is to write a fully-fledged 3D game engine in C++, including a game editor and a short game prototype programmed within the engine.</p>
+<h2>Video Game Programming Teacher (First year) - ISART Digital, Montréal, Québec, Canada (2019 - 2020)</h2>
+<p>After five years working a full-time job for AAA companies, I decided to take a break from my game developer career to share the knowledge I acquired with students.</p>
+<p>That&#39;s why I joined the Montreal offices of ISART Digital, which is one of the highest ranking video game schools in the world.</p>
+<p>I first joined the school as a teacher for the video game programming first year class, for the schoolyear 2019/2020.</p>
+<p>The main teachings of this class include, but are not limited to :</p>
+<ul>
+<li>C and C++ Basics : Data Structures, Sorting algorithms, algorithmic complexity...</li>
+</ul>
+<ul>
+<li>Video game programming basics using low-level APIs like SDL and SFML</li>
+</ul>
+<ul>
+<li>First approach at 3D rendering using OpenGL (both Legacy/GL2.x and Modern/GL3+)<ul>
+<li>Basic rendering algorithms (texture mapping, Blinn-Phong lighting)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Introduction to OOP and useful design patterns in video games</li>
+</ul>
+<ul>
+<li>Introduction to 2D and 3D physics (Separating axis theorem, Bullet physics engine integration)</li>
+</ul>
+<ul>
+<li>Versioning basics using Git</li>
+</ul>
+<p>The end of year project for this class was recoding a Minecraft-like first person game, using a custom voxel engine written from scratch using low-level libraries like OpenGL for rendering and GLFW for windowing.</p>
+<h2>Video Game Engine Programmer - Ubisoft Ivory Tower, Lyon, France (2017 - 2019)</h2>
+<p>I spent three years at Ubisoft Ivory Tower working on the online open world racing game The Crew 2.</p>
+<p>There, I worked on developing new features for the game engine, as well as optimizing existing ones on all target platforms for the game at that point in time (PC, Xbox One, Playstation 4).</p>
+<p>My tasks also included collaboration with other programmers on the game editor to maintain and create new tools for artists and designers.</p>
+<p>I also collaborated with the Rendering team on topics such as ocean water rendering and texture management.</p>
+<p>My missions included, but were not limited to :</p>
+<ul>
+<li>Debugging the lock-free utilities of the asynchronous resource manager code</li>
+</ul>
+<ul>
+<li>Implementation of a Vehicle Locator editing system, allowing designers and artists to quickly place new assets on existing vehicles</li>
+</ul>
+<ul>
+<li>Various editor tools for artists and designers, curve editor and a 2D map editing tool</li>
+</ul>
+<ul>
+<li>Setting up an automated test bed for all available vehicles in the game, making sure they all load correctly without errors</li>
+</ul>
+<ul>
+<li>Implementing a time drift compensation algorithm, server and client-side</li>
+</ul>
+<ul>
+<li>Prototype of boids simulation for flying wildlife (birds)</li>
+</ul>
+<ul>
+<li>Refactoring of the whole distance-based entity spawning subsystem (mesh instancing optimization)</li>
+</ul>
+<p><img src="img/tc2.png" alt="The Crew 2 Credits"></p>
+<h2>Video Game Tools Programmer - Arkane Studios, Lyon, France (2015 - 2017)</h2>
+<p>I spent my graduation internship working in Arkane Studios, who hired me following the graduation.</p>
+<p>I worked for two years on the highly anticipated game Dishonored 2 as a Tools Programmer until the release of the game.</p>
+<p>My main mission was to maintain the game editor application, written in C++, and answer to every need the Art team would have to make their work easier and faster.</p>
+<p>During this time, I had the opportunity to work with animators, 3D artists, VFX artists, and more...</p>
+<p>Among my main missions were :</p>
+<ul>
+<li>the creation of a texel density checking tool, allowing environment artists to check the resolution of textures imported in the game engine would fit their intended use (no 4K texture for the bottom of a flower pot...)</li>
+</ul>
+<ul>
+<li>maintaining the existing animation keyframing tool, helping the Animation team getting their work done faster. Among other tasks, I developed a pose extractor for characters, allowing animators to quickly preview, in editor mode, the poses a given character would make in game. I also helped the development of the procedural eye movement algorithms and tools.</li>
+</ul>
+<ul>
+<li>the creation of an economy tracker tool, so that economic designers could easily have an overview of the amount of game money they put in a level to help them balance the game.</li>
+</ul>
+<ul>
+<li>the maintenance and administration of the studio&#39;s automated game performance profiling tool, Sentinel.<ul>
+<li>This bot roamed in the game levels autonomously, taking performance profiler snapshots at key waypoints in order to identify performance pain points and help the developers pinpoint where bottlenecks came from.</li>
+<li>I administrated the SQL Server database, rewrote most of the SQL code base for better performance, and revamped most of the Web view of the database using the AngularJS framework to allow lead developers to better visualize the statistics gathered by Sentinel.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>the creation of a mini-database tool written in Python and SQLite in order to assess the efficiency of the game assets&#39; packing into retail-ready data chunks format.<ul>
+<li>The goal of this tool was to quickly generate statistics about the memory consumption of each type of asset, how to optimize their layout on disk to benefit from most recently used files, detect duplicates, etc.</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/dis2.png" alt="Dishonored 2 Credits"></p>
+<h2>Python and Arduino Programmer - MetaLab Reticular Art Center, Lyon, France (2013)</h2>
+<p>Being a fan of theater, I consider myself lucky to have been able to work with <a href="https://metalabartsnumeriques.wordpress.com/reticular-art-center/">MetaLab</a>.</p>
+<p>The project I worked on with this artistic organization was about controlling remotely robots on stage.</p>
+<p>The end goal was that the play director could program stage robots carrying decor elements around, to build entire choregraphies using a dedicated app on his iPad.</p>
+<p>We started from scratch to implement this project, using a mix of Python and Arduino C++ to do it.</p>
+<p>For the wireless network code, we used the Python Twisted event-driven framework, combined with Arduino chips plugged in to XBee shields for short-range wireless communication.</p>
+<p>The Python application&#39;s job was to be the middleman between the iPad and the Arduino driving the wheels of the robot.</p>
+<p>The robot model was a <a href="https://www.robotshop.com/community/robots/show/magabot">Magabot</a>.</p>
+<p>I started working on the implementation of the iPad application in Objective-C, but my contract with MetaLab ended before I could finish the project.</p>
+<p><img src="img/magabot.png" alt="The robot used for this project"></p>
+<h2>C++ 3D Programmer - Orten, Lyon, France (2013)</h2>
+<p>An internship at Orten was my first experience in the world of real-time 3D rendering.</p>
+<p>Orten is part of Groupe Lecante, a medical company specialized in building leg prosthetics and orthopedics devices in general.</p>
+<p>Orten is the software R&amp;D division of Lecante, working on a number of in-house developed projects that the company then sells to customers or for its own usage.</p>
+<p>I worked on the flagship product of the company, <a href="https://orten.proteor.com/ortenshape/technology/">OrtenShape</a>, a CAD software used to model and correct photogrammetric body scans later used for prosthetics molding.</p>
+<p>This software is built using C++ as programming language and Qt as a windowing interface.</p>
+<p>My first mission was to profile the code of the application and come up with solutions to increase the performance of the most critical code paths. It got me experiencing with modern C++ multithreading, and a bit of CUDA.</p>
+<p>Then I had to investigate a bug in VTK, the 3D visualization toolkit used by the application, to fix 3D model texturing when multiple textures are used instead of a single one.</p>
+<p>Since it was tricky to figure out, we decided to open source on Github the source code of our solution, the <a href="https://github.com/Scylardor/vtkTexturingHelper">vtkTexturingHelper</a>, for other researchers to profit from it in case someone faced the same issue as us.</p>
+<p>I wrote on my personal blog <a href="http://scylardor.fr/2013/05/06/making-multi-texturing-work-with-vtk/">an article about this research</a> which, according to Analytics, turned out to be a surprise hit and one of the most visited pages of the blog ever since.</p>
+<p><img src="img/mesh.jpg" alt="A mesh textured with our solution"></p>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <script>
+    $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+    $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+  </script>
+
+
+
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right small menu">
+      <div class="ui tiny basic message segment">
+         Powered by <a href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a> 
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>

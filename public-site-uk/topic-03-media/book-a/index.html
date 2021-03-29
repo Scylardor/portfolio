@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/highlightjs@9.16.2,npm/jquery@3.4.1,npm/jquery-address@1.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/railscasts.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
+
+body {
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
+}
+
+p {
+  margin: 0.5em;
+}
+
+pre code {
+  font-family: "Monaco";
+  font-size: 100%;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin:10px;
+}
+
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
+  font-style:italic;
+  font-size:130%;
+}
+
+h2 {
+  font-size:110%;
+}
+
+h3 {
+  font-size:100%;
+}
+
+
+
+      
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
+
+
+
+    </style>
+  </head>
+
+  
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  Personal projects  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Front Line Zero">
+          Front Line Zero
+        </a>
+      
+    </div>
+  </div>
+
+
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
+      
+        
+          
+            <a class="item"
+               href="/topic-02-varied/book-a/index.html">Career </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-a/index.html">Front Line Zero </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-b/index.html">Experiments </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-media/book-c/index.html">Monocle </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-1/book-a/index.html">Music and theatre </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-04-units/unit-2/book-a/index.html">Short stories </a>
+          
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Front Line Zero">
+            <h1>Front Line Zero</h1>
+<p>An Unreal Engine 4 cyberpunk rail-shooter indie game inspired by Rez.</p>
+<p><img src="img/flz.jpg" alt="Logo of the game"></p>
+<h2>History</h2>
+<p><strong>Front Line Zero</strong> is a video game project started in late 2017 by the London-based company <strong>METATEK</strong>.</p>
+<p>Founded by <strong>Dan Carter</strong>, VFX artist and Houdini specialist, the company&#39;s goal is to provide and promote novel audio-visual sensory experiences through the use of new technologies.</p>
+<p>Greatly inspired by games such as Rez, Child of Eden or Thumper, that put the music and sound effects to the core of gameplay, I decided to join the team to work on the audioreactive game project <strong>Front Line Zero</strong> (code named <em>XAO</em> at first, found the final name myself).</p>
+<p>The game is meant to be composed of ten rail-shooter levels with an emphasis on firing your weapons in sync with the rhythm of the music. Each interaction yielding a different procedural sound using a custom MIDI track for each level, it makes the creation of original melodies a core part of the gameplay experience.</p>
+<p>Much like predecessors like Rez, each level is also going to embody a different variation on the game concepts, with a unique visual style and mechanics you need to defeat to complete the level.</p>
+<p>To this day, Front Line Zero is still in active development.</p>
+<h2>Contributions</h2>
+<p>Across the years, this project became very personal for me as I had a far-reaching influence on most steps of the development.</p>
+<ul>
+<li>I&#39;m in charge of the &quot;systems administration&quot; part of the project, dealing with hosting a dedicated Linux VPS at OVH to provide the team with a working Git+Git LFS repository, plugged in to a private Gitea server (our very own Github !) to help monitor the progress and write documentation on the project&#39;s wiki.</li>
+</ul>
+<ul>
+<li>I developed in Unreal Engine, with C++, most of the game systems like character movement components (both spline-based and procedural), editor tools for the designers to be more efficient in their work, and more gameplay code like weapons, powerups, and enemy behaviors (FSM-driven AIs).</li>
+</ul>
+<ul>
+<li>I helped with almost all aspects of core game design, ranging from the player&#39;s weapons and main enemy types to designing entire boss fights, coming up with fight sequences and victory conditions in detail. A lot of the design process of a rail-shooter is to always bring something new for the player not to get bored, so a lot of creativity has to be put in that process.</li>
+</ul>
+<ul>
+<li>I wrote most of the narrative of the game, including main story events, some character dialogues, character backstories and most of the lore of the game&#39;s fictional universe.</li>
+</ul>
+<p>In general, most of our designs, work documents and source code are private. If you would like to have a sample of what I produced for the game, feel free to reach out to me by email or any other platform and I&#39;ll try to fulfill your request.</p>
+<h2>Screenshots</h2>
+<p><img src="img/inferno.jpg" alt="Matryoshka Level"></p>
+<p><img src="img/serenity.jpg" alt="Serenity Holdings Level"></p>
+<p><img src="img/milnetWeb.jpg" alt="Pentatech Level"></p>
+<p><img src="img/ichiba.jpg" alt="Ichiba Level"></p>
+<h2>Links</h2>
+<p>If you would like to know more :</p>
+<ul>
+<li>Front Line Zero website : <a href="http://www.frontlinezero.com"><a href="http://www.frontlinezero.com">http://www.frontlinezero.com</a></a></li>
+</ul>
+<ul>
+<li>Metatek website : <a href="http://www.metatek.ninja/"><a href="http://www.metatek.ninja/">http://www.metatek.ninja/</a></a></li>
+</ul>
+<ul>
+<li>Metatek Instagram : <a href="https://www.instagram.com/metatek.io/"><a href="https://www.instagram.com/metatek.io/">https://www.instagram.com/metatek.io/</a></a></li>
+</ul>
+<ul>
+<li>Metatek Twitter : <a href="https://twitter.com/metatek"><a href="https://twitter.com/metatek">https://twitter.com/metatek</a></a></li>
+</ul>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <script>
+    $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+    $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+  </script>
+
+
+
+  <div class="ui bottom fixed borderless right menu">
+    <div class="ui right small menu">
+      <div class="ui tiny basic message segment">
+         Powered by <a href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a> 
+      </div>
+    </div>
+  </div>
+
+  </body>
+
+</html>
