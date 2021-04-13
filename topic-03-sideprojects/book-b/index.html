@@ -93,8 +93,8 @@ html, body {
     </header>
     <div class="right tab-menu menu">
       
-        <a class="item" data-tab="Experiments">
-          Experiments
+        <a class="item" data-tab="Crossfire">
+          Crossfire
         </a>
       
     </div>
@@ -124,14 +124,21 @@ html, body {
         
           
             <a class="item"
-               href="/topic-03-sideprojects/book-b/index.html">Experiments </a>
+               href="/topic-03-sideprojects/book-b/index.html">Crossfire </a>
           
         
       
         
           
             <a class="item"
-               href="/topic-03-sideprojects/book-c/index.html">Monocle </a>
+               href="/topic-03-sideprojects/book-c/index.html">Experiments </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-sideprojects/book-d/index.html">Monocle </a>
           
         
       
@@ -154,34 +161,45 @@ html, body {
       <div class="ui basic segment">
         <br>
         
-          <div class="ui tab segment lab" data-tab="Experiments">
-            <h1>Experiments</h1>
-<p>Game jams, prototypes... All my other &quot;toy projects&quot;.</p>
-<h2>Handvolution</h2>
-<p>Made with Unity 5 at Game Dev Party 8 (Lyon, France, 2015)</p>
-<p>With Emmanuel Body-Hinrichsen and Arnaud Jomard.</p>
-<p>This mini-game programmed in 2 days was an evolution of the classic &quot;rock paper scissor&quot; game.</p>
-<p>Genetic mutations enable the player to grow more than 5 fingers, creating monstruous hands and enabling never-seen-before combinations !</p>
-<p>It was a great way to iterate on a well-known classic game design to evolve it into something new.</p>
-<p>The code of the game is open source and <a href="https://github.com/etbh/chifumi">available on Emmanuel&#39;s Github</a>.</p>
-<p><img src="img/handvolution.png" alt="Poster for Handvolution : The Game"></p>
-<h2>ofxShadersFX</h2>
-<p><a href="https://github.com/Scylardor/ofxShadersFX">ofxShadersFX</a> is a plugin for the C++ creative coding platform <a href="https://openframeworks.cc/">openFrameworks</a>.</p>
-<p>The aim of this plugin is to facilitate the use of well-known shaders in a handy, ready-made package users can just download and start using.</p>
-<p>It emerged from the realization that at the time, all openFrameworks built-in lighting facilities failed using GL core profile, because they relied on the legacy OpenGL fixed-function lighting system. So, people had to recreate their own lighting systems from scratch.</p>
-<p>I programmed in modern GLSL (3.+) some well-known shaders for :</p>
+          <div class="ui tab segment lab" data-tab="Crossfire">
+            <h1>Crossfire</h1>
+<p>An Attack on Titan dating sim visual novel fan game, made using Python with the Ren&#39;Py visual novel engine.</p>
+<p><img src="img/main.png" alt="Logo of the game"></p>
+<h2>History</h2>
+<p><strong>Crossfire</strong> is a video game project started by the French company <strong>Agape Studio</strong> in early 2014.</p>
+<p>It was intended to be a free-to-play fan game set in the Attack On Titan™ fictional universe, showing alternative events that were not presented in the manga using pre-existing characters, but a completely original scenario.</p>
+<p>I was part of the three founders, and the goal of this indie studio was to make otome games (dating simulations) in a visual novel format.</p>
+<p>We decided to start the studio&#39;s activity by creating free-to-play games about well-known, popular franchises to help kickstart the reputation of the studio.</p>
+<p>The visual novel format is interesting because it shares a lot with staging a play. You need to think about writing pace, action rhythm, and also an art style that fits properly with the intended story in an otherwise mostly static setup. Narration is crucial in this kind of game and even the most tiny detail is important.</p>
+<p>To communicate about the game, we used a Twitter and a Tumblr. We also had a <a href="https://lemmasoft.renai.us/forums/viewtopic.php?t=28615">Lemmasoft dedicated thread for the game</a>.</p>
+<p>The first chapter of the game was released on the game&#39;s Tumblr and earned some interest, especially from the Attack On Titan community (a few hundreds downloads).</p>
+<p>We even went to Yaoi Yuri Con to showcase the first chapter of the game and sell custom made goodies !</p>
+<p><img src="img/yyc.jpg" alt="Floor plan of the Yaoi Yuri Con we attended to showcase the game"></p>
+<p>Unfortunately, the project was discontinued in early 2017 as the members of the team went their separate ways.</p>
+<h2>Contributions</h2>
+<p>As the programmer of the team, my job was to implement all the necessary systems for the game :</p>
 <ul>
-<li><p>Phong and Blinn-Phong lighting (both in Gouraud and Phong shading modes)</p>
-</li>
-<li><p>Displacement mapping</p>
-</li>
-<li><p>Alpha blending</p>
-</li>
-<li><p>Color key mapping.</p>
-</li>
+<li>a relationship goals / score system</li>
+<li>a branching dialogue system based on the former</li>
+<li>customized procedural face expression combination system (eyes, lips, posture...) to ease the artist&#39;s work</li>
+<li>2D mini-games that fit within the narrative structure of the game.</li>
 </ul>
-<p>It was a great introduction to the world of shaders.</p>
-<p><img src="img/ofxaddons_thumbnail.png" alt="Thumbnail on ofxaddons.com"></p>
+<p>Examples of mini-games made for this project :</p>
+<ul>
+<li>a simple avoidance game from Titans running from the top of the screen, using an infinite scrolling texture for the ground, for an escape scene</li>
+<li>a DDR-like rhythm game using synchronized keypresses, for a ballroom dance scene</li>
+</ul>
+<p>In general, most of our designs, work documents and source code are private. If you would like to have a sample of what I produced for the game, feel free to reach out to me by email or any other platform and I&#39;ll try to fulfill your request.</p>
+<h2>Screenshots</h2>
+<p><img src="img/kakoi.png" alt="A screenshot from unreleased Chapter 2"></p>
+<h2>Links</h2>
+<p>If you would like to know more :</p>
+<ul>
+<li>Agape Tumblr Download link : <a href="https://attackonbara.tumblr.com/download"><a href="https://attackonbara.tumblr.com/download">https://attackonbara.tumblr.com/download</a></a></li>
+</ul>
+<ul>
+<li>Agape Twitter : <a href="https://twitter.com/agape_vn"><a href="https://twitter.com/agape_vn">https://twitter.com/agape_vn</a></a></li>
+</ul>
 
           </div>
         

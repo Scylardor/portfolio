@@ -93,8 +93,8 @@ html, body {
     </header>
     <div class="right tab-menu menu">
       
-        <a class="item" data-tab="Monocle">
-          Monocle
+        <a class="item" data-tab="Experiments">
+          Experiments
         </a>
       
     </div>
@@ -124,14 +124,21 @@ html, body {
         
           
             <a class="item"
-               href="/topic-03-sideprojects/book-b/index.html">Experiments </a>
+               href="/topic-03-sideprojects/book-b/index.html">Crossfire </a>
           
         
       
         
           
             <a class="item"
-               href="/topic-03-sideprojects/book-c/index.html">Monocle </a>
+               href="/topic-03-sideprojects/book-c/index.html">Experiments </a>
+          
+        
+      
+        
+          
+            <a class="item"
+               href="/topic-03-sideprojects/book-d/index.html">Monocle </a>
           
         
       
@@ -154,102 +161,34 @@ html, body {
       <div class="ui basic segment">
         <br>
         
-          <div class="ui tab segment lab" data-tab="Monocle">
-            <h1>Monocle</h1>
-<p>My personal 3D game engine using multiple rendering APIs.</p>
-<h2>Introduction</h2>
-<p>Monocle is my learning project when I want to experiment with new rendering algorithms or new APIs I don&#39;t know yet.</p>
-<p>It is meant to be a modular and flexible framework for 3D applications, using a number of DLLs representing each of the engine&#39;s &quot;modules&quot; (Audio, Physics, Rendering, Window...).</p>
-<p>It is built using CMake.</p>
-<p>The project is open source and <a href="https://github.com/Scylardor/Monocle2">available on Github</a>, although the code there isn&#39;t always up-to-date (or on secondary branches).</p>
-<p>It went through multiple iterations and is in a constant &quot;work in progress&quot; state.</p>
-<p>Thus, it is by no means usable to develop a real game at the moment...</p>
-<p>But here is a list of the important modules it has, and their main features :</p>
-<h2>Core</h2>
-<p>This module is meant to be a central module for all others to include and use features of.</p>
-<p>Among other things, it features :</p>
+          <div class="ui tab segment lab" data-tab="Experiments">
+            <h1>Experiments</h1>
+<p>Game jams, prototypes... All my other &quot;toy projects&quot;.</p>
+<h2>Handvolution</h2>
+<p>Made with Unity 5 at Game Dev Party 8 (Lyon, France, 2015)</p>
+<p>With Emmanuel Body-Hinrichsen and Arnaud Jomard.</p>
+<p>This mini-game programmed in 2 days was an evolution of the classic &quot;rock paper scissor&quot; game.</p>
+<p>Genetic mutations enable the player to grow more than 5 fingers, creating monstruous hands and enabling never-seen-before combinations !</p>
+<p>It was a great way to iterate on a well-known classic game design to evolve it into something new.</p>
+<p>The code of the game is open source and <a href="https://github.com/etbh/chifumi">available on Emmanuel&#39;s Github</a>.</p>
+<p><img src="img/handvolution.png" alt="Poster for Handvolution : The Game"></p>
+<h2>ofxShadersFX</h2>
+<p><a href="https://github.com/Scylardor/ofxShadersFX">ofxShadersFX</a> is a plugin for the C++ creative coding platform <a href="https://openframeworks.cc/">openFrameworks</a>.</p>
+<p>The aim of this plugin is to facilitate the use of well-known shaders in a handy, ready-made package users can just download and start using.</p>
+<p>It emerged from the realization that at the time, all openFrameworks built-in lighting facilities failed using GL core profile, because they relied on the legacy OpenGL fixed-function lighting system. So, people had to recreate their own lighting systems from scratch.</p>
+<p>I programmed in modern GLSL (3.+) some well-known shaders for :</p>
 <ul>
-<li>an extensive, easy to use policy-based logging chain</li>
-<li>Debugger and preprocessor utilities like a custom Assert macro, manual DebugBreak instruction, Builder pattern helper macro...</li>
-<li>an implementation of the <a href="http://blog.coldflake.com/posts/C++-delegates-on-steroids/">impossibly fast delegates</a></li>
-<li>a &quot;printf-like&quot; string formatter, but that can work with std::string&#39;s out of the box for convenience ( inspired by <a href="https://docs.microsoft.com/en-us/archive/msdn-magazine/2015/march/windows-with-c-using-printf-with-modern-c">Kenny Kerr</a> )</li>
-<li>a HashString implementation, enabling compile-time string hashing for better performance at runtime (when using them as hashmap keys for example)</li>
-</ul>
-<h2>Game Framework</h2>
-<p>A module meant to provide more game-centric data structures. Among others :</p>
-<ul>
-<li>A Factory-based Resource Manager making it easy to collect and reuse data resources as they are read and processed by plug-n-play factories that you connect to the manager.</li>
-<li>A generic FSM system that lets you program a custom finite state machine for your game.</li>
-</ul>
-<h2>Graphics</h2>
-<p>At its core, Monocle was always intended to be kind of a toy renderer sandbox, although a game engine is always much more than just that.</p>
-<p>The graphics features I successfully implemented with Monocle :</p>
-<ul>
-<li>Skyboxes</li>
-<li>Mesh Instancing</li>
-<li>Gamma correction and tone mapping operators (including use of the sRGB color space)</li>
-<li>Shadow mapping (with PCF)</li>
-<li>Normal mapping</li>
-<li>Parallax mapping</li>
-<li>Blending (transparency)</li>
-<li>SSAO</li>
-<li>Bloom (glow effect)</li>
-<li>a basic PBR metalness/roughness-based material system (using a BRDF, and IBL with HDR maps) </li>
-<li>a basic deferred renderer (as opposed to classic forward rendering)</li>
-</ul>
-<p>Unfortunately it does not work on all backends and most of it has been done in OpenGL so far.</p>
-<p>Slowly but surely adapting it to all backends ! (One day...)</p>
-<p>So far, I programmed in Monocle abstractions of the following rendering backends :</p>
-<ul>
-<li><p>OpenGL 4 (with the newer DSA calls)</p>
+<li><p>Phong and Blinn-Phong lighting (both in Gouraud and Phong shading modes)</p>
 </li>
-<li><p>DirectX 11 (in progress)</p>
+<li><p>Displacement mapping</p>
 </li>
-<li><p>Vulkan (in progress)</p>
+<li><p>Alpha blending</p>
+</li>
+<li><p>Color key mapping.</p>
 </li>
 </ul>
-<p>But so far, the code never has been really cleaned up and is very messy. It works, but needs constant refactoring.</p>
-<p>Hopefully I can stabilize it one day to a common RHI (Render Hardware Interface) that I like.</p>
-<p><img src="img/shadowmapping.PNG" alt="Shadow Mapping"></p>
-<p><img src="img/bloom.png" alt="Bloom (Glow)"></p>
-<p><img src="img/main.png" alt="PBR material testbed"></p>
-<h2>Unit tests</h2>
-<p>Apart from the features of the engine, I try as much as I can to include unit tests for all easily testables features of the engine.</p>
-<p>To do so, I use Catch2 as a testing framework.</p>
-<p>A dedicated program built alongside the engine makes the user able to run the tests and easily add new ones if necessary.</p>
-<h2>TODO list</h2>
-<p>What I would like to tackle someday :</p>
-<ul>
-<li>GUI and Editor app integration (with ImGui)</li>
-</ul>
-<ul>
-<li>Physics integration (with either Bullet or PhysX)</li>
-</ul>
-<ul>
-<li>Audio integration (with fmod)</li>
-</ul>
-<ul>
-<li>Scripting (with the Lua scripting language)</li>
-</ul>
-<ul>
-<li>The graphics side is obviously very wide, among the main ideas that I would like to try :</li>
-</ul>
-<ul>
-<li>Planar reflections </li>
-<li>Raytracing with the new Vulkan extensions</li>
-<li>Compute shader-based cloth simulation</li>
-<li>Compute shader-based particle systems</li>
-<li>FXAA and other, fancier anti-aliasing algorithms</li>
-<li>A fancier implementation of SSAO, like <a href="https://github.com/nvpro-samples/gl_ssao">this implementation of HBAO by Nvidia</a></li>
-<li>Signed distance field-based geometries and font rendering</li>
-<li>Frustum culling and occlusion culling</li>
-<li>Order-independent transparency</li>
-<li>Spherical environment mapping</li>
-<li>Terrain tessellation</li>
-<li>Ocean water simulation</li>
-<li>Volumetric fog and lighting</li>
-</ul>
-<p>The list is endless... Got work for at least the next decade !</p>
+<p>It was a great introduction to the world of shaders.</p>
+<p><img src="img/ofxaddons_thumbnail.png" alt="Thumbnail on ofxaddons.com"></p>
 
           </div>
         
